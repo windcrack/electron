@@ -1,6 +1,6 @@
 {
   "name": "electron-quick-start",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -18,5 +18,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^27.1.0"
+  },
+  "dependencies": {
+    "electron-store": "^8.1.0"
   }
 }
