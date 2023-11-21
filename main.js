@@ -6,7 +6,7 @@ const DataStore = require('./DataStore');
 
 //require('electron-reload')(__dirname);
 
-const todoData = new DataStore({name: 'Todo Main'})
+const todosData = new DataStore({name: 'Todo Main'})
 
 function main (){
   let mainWindow = new Window({
@@ -19,7 +19,7 @@ function main (){
 
   let addTodoWin;
   mainWindow.once('show', () =>{
-    mainWindow.webContents.send('todos', todoData.todos)
+    mainWindow.webContents.send('todos', todosData.todos)
   });
 
   ipcMain.on('add-todo-window', () =>{
@@ -48,7 +48,7 @@ function main (){
   })
 
   ipcMain.on('delete-todo', (event, todo) =>{
-    const updatedTodos = todoData.deleteTodo(todo).todos
+    const updatedTodos = todosData.deleteTodo(todo).todos
 
     mainWindow.send('todos', updatedTodos)
   })
