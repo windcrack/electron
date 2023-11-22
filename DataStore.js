@@ -29,6 +29,7 @@ class DataStore extends Store{
       }
 
     deleteTodo(todo){
+        todo = todo.trim();
         this.todos = this.todos.filter(t => t !== todo)
 
         return this.saveTodos()

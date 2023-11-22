@@ -13,3 +13,28 @@
 body{
     font: caption;
 }
+
+.todo-item{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    counter-increment: list;
+}
+
+.todo-item::before{
+    content: counter(list);
+    position: relative;
+    display: block;
+    font-size: 18px;
+}
+
+.todo-item__btn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.todo-item__btn svg{
+    width: 30px;
+    height: 30px;
+}
